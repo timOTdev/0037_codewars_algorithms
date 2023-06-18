@@ -1,4 +1,28 @@
-# Resources > Codewars algorithms
+# 0037_codewars_algorithms
+
+## 5/20/2017
+
+## [Delete occurrences of an element if it occurs more than n times](https://www.codewars.com/kata/554ca54ffa7d91b236000023/train/javascript)
+
+- Given a list lst and a number N, create a new list that contains each number of lst at most N times without reordering. For example if N = 2, and the input is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+
+```js
+function deleteNth(arr, n) {
+  let obj = {};
+
+  return arr.filter(function(num) {
+    obj[num] = obj[num] ? obj[num] + 1 : 1;
+
+    if (obj[num] <= n) {
+      return obj[num];
+    }
+  })
+}
+
+deleteNth([20,37,20,21],1) // return [20,37,21]
+deleteNth([20,37,20,21,37,20], 3) // [ 20, 37, 20, 21, 37 ]
+deleteNth([1,1,1,1],2) // return [1,1]
+```
 
 # 12/26/2017
 
